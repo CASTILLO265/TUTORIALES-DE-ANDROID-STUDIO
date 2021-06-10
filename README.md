@@ -1,13 +1,6 @@
 
 <html>
-<head>
-    <title>TUTORIAL SOBRE ANDROID STUDIO</title></head>
-    <style>body
-            h1 {
-    color: dark;
-    text-align: center;            
-            } 
-        </style>
+
     <h1><a href="https://www.tutorialesprogramacionya.com/javaya/androidya/androidstudioya/index.php?inicio=0.">TUTORIAL SOBRE ANDROID STUDIO</a></h1>
     <img src="Androidstudio.png" align="right" width="350 px" height="300 px"><p style="font-size: 21px; color: black">Todos los tutoriales son originarios de la pagina web ANDROID YA, y puedes acceder en ella con el siguiente link:  <a href="https://www.tutorialesprogramacionya.com/javaya/androidya/androidstudioya/index.php?inicio=0.">ANDROID YA ("TUTORIALES")  </a>
     <p style="font-size: 21px; color: black">O tambien dando clic en el titulo de "tutoriales sobre android studio"</p>
