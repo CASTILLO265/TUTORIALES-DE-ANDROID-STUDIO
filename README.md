@@ -1,6 +1,4 @@
-
 <html>
-
     <h1><a href="https://www.tutorialesprogramacionya.com/javaya/androidya/androidstudioya/index.php?inicio=0.">TUTORIAL SOBRE ANDROID STUDIO</a></h1>
     <img src="Androidstudio.png" align="right" width="350 px" height="300 px"><p style="font-size: 21px; color: black">Todos los tutoriales son originarios de la pagina web ANDROID YA, y puedes acceder en ella con el siguiente link:  <a href="https://www.tutorialesprogramacionya.com/javaya/androidya/androidstudioya/index.php?inicio=0.">ANDROID YA ("TUTORIALES")  </a>
     <p style="font-size: 21px; color: black">O tambien dando clic en el titulo de "tutoriales sobre android studio"</p>
@@ -3605,7 +3603,7 @@ public class Casilla {
     }
 
     public boolean dentro(int xx,int yy) {
-        if (xx>=this.x && xx<=this.x+ancho && yy>=this.y && yy<=this.y+ancho)
+        if (xx>=this.x && xx&lt;=this.x+ancho && yy>=this.y && yy&lt;=this.y+ancho)
             return true;
         else
             return false;
@@ -3649,8 +3647,8 @@ public class MainActivity extends AppCompatActivity   implements View.OnTouchLis
         fondo.setOnTouchListener(this);
         layout.addView(fondo);
         casillas = new Casilla[8][8];
-        for (int f = 0; f < 8; f++) {
-            for (int c = 0; c < 8; c++) {
+        for (int f = 0; f &lt; 8; f++) {
+            for &lt;int c = 0; c &lt; 8; c++) {
                 casillas[f][c] = new Casilla();
             }
         }
@@ -3661,8 +3659,8 @@ public class MainActivity extends AppCompatActivity   implements View.OnTouchLis
 
     public void reiniciar(View v) {
         casillas = new Casilla[8][8];
-        for (int f = 0; f < 8; f++) {
-            for (int c = 0; c < 8; c++) {
+        for (int f = 0; f &lt; 8; f++) {
+            for (int c = 0; c &lt; 8; c++) {
                 casillas[f][c] = new Casilla();
             }
         }
@@ -3676,8 +3674,8 @@ public class MainActivity extends AppCompatActivity   implements View.OnTouchLis
     @Override
     public boolean onTouch(View v, MotionEvent event) {
         if (activo)
-            for (int f = 0; f < 8; f++) {
-                for (int c = 0; c < 8; c++) {
+            for (int f = 0; f &lt; 8; f++) {
+                for (int c = 0; c &lt; 8; c++) {
                     if (casillas[f][c].dentro((int) event.getX(),
                             (int) event.getY())) {
                         casillas[f][c].destapado = true;
@@ -3708,7 +3706,7 @@ public class MainActivity extends AppCompatActivity   implements View.OnTouchLis
         protected void onDraw(Canvas canvas) {
             canvas.drawRGB(0, 0, 0);
             int ancho = 0;
-            if (canvas.getWidth() < canvas.getHeight())
+            if (canvas.getWidth() &lt; canvas.getHeight())
                 ancho = fondo.getWidth();
             else
                 ancho = fondo.getHeight();
@@ -3722,8 +3720,8 @@ public class MainActivity extends AppCompatActivity   implements View.OnTouchLis
             Paint paintlinea1 = new Paint();
             paintlinea1.setARGB(255, 255, 255, 255);
             int filaact = 0;
-            for (int f = 0; f < 8; f++) {
-                for (int c = 0; c < 8; c++) {
+            for (int f = 0; f &lt; 8; f++) {
+                for (int c = 0; c &lt; 8; c++) {
                     casillas[f][c].fijarxy(c * anchocua, filaact, anchocua);
                     if (casillas[f][c].destapado == false)
                         paint.setARGB(153, 204, 204, 204);
@@ -3739,7 +3737,7 @@ public class MainActivity extends AppCompatActivity   implements View.OnTouchLis
                             paintlinea1);
 
                     if (casillas[f][c].contenido >= 1
-                            && casillas[f][c].contenido <= 8
+                            && casillas[f][c].contenido &lt;= 8
                             && casillas[f][c].destapado)
                         canvas.drawText(
                                 String.valueOf(casillas[f][c].contenido), c
@@ -3774,8 +3772,8 @@ public class MainActivity extends AppCompatActivity   implements View.OnTouchLis
 
     private boolean gano() {
         int cant = 0;
-        for (int f = 0; f < 8; f++)
-            for (int c = 0; c < 8; c++)
+        for (int f = 0; f &lt; 8; f++)
+            for (int c = 0; c &lt; 8; c++)
                 if (casillas[f][c].destapado)
                     cant++;
         if (cant == 56)
@@ -3785,8 +3783,8 @@ public class MainActivity extends AppCompatActivity   implements View.OnTouchLis
     }
 
     private void contarBombasPerimetro() {
-        for (int f = 0; f < 8; f++) {
-            for (int c = 0; c < 8; c++) {
+        for (int f = 0; f &lt; 8; f++) {
+            for (int c = 0; c &lt; 8; c++) {
                 if (casillas[f][c].contenido == 0) {
                     int cant = contarCoordenada(f, c);
                     casillas[f][c].contenido = cant;
@@ -3805,25 +3803,25 @@ public class MainActivity extends AppCompatActivity   implements View.OnTouchLis
             if (casillas[fila - 1][columna].contenido == 80)
                 total++;
         }
-        if (fila - 1 >= 0 && columna + 1 < 8) {
+        if (fila - 1 >= 0 && columna + 1 &lt; 8) {
             if (casillas[fila - 1][columna + 1].contenido == 80)
                 total++;
         }
 
-        if (columna + 1 < 8) {
+        if (columna + 1 &lt; 8) {
             if (casillas[fila][columna + 1].contenido == 80)
                 total++;
         }
-        if (fila + 1 < 8 && columna + 1 < 8) {
+        if (fila + 1 &lt; 8 && columna + 1 &lt; 8) {
             if (casillas[fila + 1][columna + 1].contenido == 80)
                 total++;
         }
 
-        if (fila + 1 < 8) {
+        if (fila + 1 &lt; 8) {
             if (casillas[fila + 1][columna].contenido == 80)
                 total++;
         }
-        if (fila + 1 < 8 && columna - 1 >= 0) {
+        if (fila + 1 &lt; 8 && columna - 1 >= 0) {
             if (casillas[fila + 1][columna - 1].contenido == 80)
                 total++;
         }
@@ -3835,7 +3833,7 @@ public class MainActivity extends AppCompatActivity   implements View.OnTouchLis
     }
 
     private void recorrer(int fil, int col) {
-        if (fil >= 0 && fil < 8 && col >= 0 && col < 8) {
+        if (fil >= 0 && fil &lt; 8 && col >= 0 && col &lt; 8) {
             if (casillas[fil][col].contenido == 0) {
                 casillas[fil][col].destapado = true;
                 casillas[fil][col].contenido = 50;
@@ -3848,7 +3846,7 @@ public class MainActivity extends AppCompatActivity   implements View.OnTouchLis
                 recorrer(fil + 1, col + 1);
                 recorrer(fil + 1, col - 1);
             } else if (casillas[fil][col].contenido >= 1
-                    && casillas[fil][col].contenido <= 8) {
+                    && casillas[fil][col].contenido &lt;= 8) {
                 casillas[fil][col].destapado = true;
             }
         }
